@@ -880,6 +880,7 @@ GameObject:
   - component: {fileID: 9166341009940207817}
   - component: {fileID: 9166341009940207822}
   - component: {fileID: 2242789089970886951}
+  - component: {fileID: 5893536219641855179}
   m_Layer: 0
   m_Name: chassis
   m_TagString: Untagged
@@ -1042,8 +1043,29 @@ MonoBehaviour:
   body: {fileID: 9166341009940207822}
   wheelLeftRadius: 0.09
   wheelRightRadius: 0.09
-  wheelSeparation: 0.2
+  wheelSeparation: 0.3
   topicName: cmd_vel
+--- !u!114 &5893536219641855179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9166341009940207816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ebf95e18040d099ab722e00c50c5942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transform: {fileID: 109016488476330995}
+  topicName: odom
+  FrameId: odom
+  publishMessageFrequency: 0.018333334
+  wheelLeft: {fileID: 9166341010218636774}
+  wheelRight: {fileID: 9166341009545986034}
+  wheelLeftRadius: 0.09
+  wheelRightRadius: 0.09
+  wheelSeparation: 0.3
 --- !u!1 &9166341010218636769
 GameObject:
   m_ObjectHideFlags: 0

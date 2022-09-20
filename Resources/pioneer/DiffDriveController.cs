@@ -22,7 +22,7 @@ public class DiffDriveController : MonoBehaviour
 
     private Vector3 linearVel = new Vector3(0, 0, 0);
     private Vector3 angularVel = new Vector3(0, 0, 0);
-    private Vector3 torque = new Vector3(0, 0, 0);
+    // private Vector3 torque = new Vector3(0, 0, 0);
 
     private List<float> velocities;
     private List<float> forces;
