@@ -153,6 +153,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 109016488476330995, guid: 823e40ea1241b59eba588419802c18d6, type: 3}
   m_PrefabInstance: {fileID: 432172682277126031}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5086836151499514506 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4856974163060923653, guid: 823e40ea1241b59eba588419802c18d6, type: 3}
+  m_PrefabInstance: {fileID: 432172682277126031}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5236893537321236449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5086836151499514506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23cc7e1007589a0999a97317367cc827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotateDir: 1
+  _numOfLayers: 1
+  _numOfIncrements: 360
+  _minVerticalAngle: 0
+  _maxVerticalAngle: 0
+  _minAzimuthAngle: 0
+  _maxAzimuthAngle: 360
+  _minRange: 0.1
+  _maxRange: 20
+  _maxIntensity: 255
+  _scanRate: 20
+  _randomSeed: 1
+  _offsetNoise: 0
+  _gaussianNoiseSigma: 0.01
+--- !u!114 &7739448469503922292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5086836151499514506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6d928fda1f4ea4f18f589c4b7da6aad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _topicName: scan
+  _frameId: scan_link
 --- !u!1001 &7444445098898196547
 PrefabInstance:
   m_ObjectHideFlags: 0
