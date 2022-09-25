@@ -41,19 +41,19 @@ public class OdomPublisher : MonoBehaviour
         if (timeElapsed > publishMessageFrequency)
         {
             OdometryMsg msg = new OdometryMsg();
-            msg.pose.pose.orientation.w = transform.rotation.w;
-            msg.pose.pose.orientation.x = transform.rotation.x;
-            msg.pose.pose.orientation.y = transform.rotation.y;
-            msg.pose.pose.orientation.z = transform.rotation.z;
+            msg.pose.pose.orientation.w = -transform.rotation.w;
+            msg.pose.pose.orientation.y = -transform.rotation.x;
+            msg.pose.pose.orientation.z = transform.rotation.y;
+            msg.pose.pose.orientation.x = transform.rotation.z;
 
-            msg.pose.pose.position.x = transform.position.x;
-            msg.pose.pose.position.y = transform.position.y;
-            msg.pose.pose.position.z = transform.position.z;
+            msg.pose.pose.position.y = -transform.position.x;
+            msg.pose.pose.position.z = transform.position.y;
+            msg.pose.pose.position.x = transform.position.z;
 
             msg.header.frame_id = FrameId;
             msg.child_frame_id = "base_link";
 
-            msg.twist.twist.linear.x = -(wheelRight.jointVelocity[0] * wheelRightRadius + wheelLeft.jointVelocity[0] * wheelLeftRadius) / 2.0f;
+            msg.twist.twist.linear.x = (wheelRight.jointVelocity[0] * wheelRightRadius + wheelLeft.jointVelocity[0] * wheelLeftRadius) / 2.0f;
             msg.twist.twist.angular.z = (wheelRight.jointVelocity[0] * wheelRightRadius - wheelLeft.jointVelocity[0] * wheelLeftRadius)/wheelSeparation;
             // Finally send the message to server_endpoint.py running in ROS
             ros.Publish(topicName, msg);
