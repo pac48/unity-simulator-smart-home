@@ -18,7 +18,7 @@ public class LaserScanPublisher : MonoBehaviour
     
     private JobHandle _handle;
     private float _timeElapsed = 0f;
-    private float _timeStamp   = 0f;
+    private double _timeStamp   = 0f;
 
     private ROSConnection _ros;
     private LaserScanMsg _message;
@@ -38,7 +38,7 @@ public class LaserScanPublisher : MonoBehaviour
 
         // setup ROS
         this._ros = ROSConnection.instance;
-        this._ros.RegisterPublisher<LaserScanMsg>(this._topicName);
+        this._ros.RegisterPublisher<LaserScanMsg>(this._topicName, 1); 
 
         // setup ROS Message
         this._message = new LaserScanMsg();
@@ -58,6 +58,7 @@ public class LaserScanPublisher : MonoBehaviour
         this._handle.Complete();
         this._lidar.Dispose();
     }
+    
 
     void Update()
     {
@@ -65,20 +66,22 @@ public class LaserScanPublisher : MonoBehaviour
         this._timeElapsed += Time.deltaTime;
        
         
-        if(this._timeElapsed > (1f/this._lidar.scanRate)) {
-            this._handle.Complete();
+        if (_timeElapsed > 1.0/_lidar.scanRate){
+
             // Update ROS Message
-            int sec = (int)Math.Truncate(this._timeStamp);
+            int sec = (int) Math.Truncate(this._timeStamp);
             uint nanosec = (uint)( (this._timeStamp - sec)*1e+9 );
             this._message.header.stamp.sec = sec;
             this._message.header.stamp.nanosec = nanosec;
             this._message.ranges = this._lidar.distances.ToArray();
             this._message.intensities = this._lidar.intensities.ToArray();
             _ros.Publish(this._topicName, this._message);
-            Debug.Log(" message sent!!!!!");
+            // Debug.Log(" message sent!!!!!");
+            
+            // this._handle.Complete();
             // Update time
             this._timeElapsed = 0;
-            this._timeStamp = Time.time;
+            this._timeStamp = Time.timeAsDouble;
 
             // Update Raycast Command
             for (int incr = 0; incr < this._lidar.numOfIncrements; incr++) {

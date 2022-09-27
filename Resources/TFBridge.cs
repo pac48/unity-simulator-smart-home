@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Newtonsoft.Json;
@@ -15,6 +16,8 @@ public class TransformData
     public double quatX;
     public double quatY;
     public double quatZ;
+    public int sec;
+    public uint nanosec;
     public string frameID { get; set; }
 }
 
@@ -35,7 +38,7 @@ public class TFBridge : MonoBehaviour
     {
         // start the ROS connection
         ros = ROSConnection.GetOrCreateInstance();
-        ros.RegisterPublisher<StringMsg>(topicName);
+        ros.RegisterPublisher<StringMsg>(topicName, 1);
     }
 
     // Update is called once per frame
@@ -45,6 +48,11 @@ public class TFBridge : MonoBehaviour
 
         if (timeElapsed > publishMessageFrequency)
         {
+            // Update ROS Message
+            double timeStamp = Time.timeAsDouble+.1;
+            int sec = (int) Math.Truncate(timeStamp);
+            uint nanosec = (uint)( (timeStamp - sec)*1e+9 );
+            
             StringMsg msg = new StringMsg();
             List<TransformData> transformDataList = new List<TransformData>(); 
             foreach (var transform in transforms)
@@ -58,6 +66,8 @@ public class TFBridge : MonoBehaviour
                 transformData.quatX = transform.rotation.x;
                 transformData.quatY = transform.rotation.y;
                 transformData.quatZ = transform.rotation.z;
+                transformData.sec = sec;
+                transformData.nanosec = nanosec;
 
                 transformDataList.Add(transformData);
             }

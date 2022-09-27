@@ -139,9 +139,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3307887044800292317, guid: 823e40ea1241b59eba588419802c18d6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307887044800292317, guid: 823e40ea1241b59eba588419802c18d6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307887044800292317, guid: 823e40ea1241b59eba588419802c18d6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307887044800292317, guid: 823e40ea1241b59eba588419802c18d6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307887044800292317, guid: 823e40ea1241b59eba588419802c18d6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307887044800292317, guid: 823e40ea1241b59eba588419802c18d6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4856974163060923653, guid: 823e40ea1241b59eba588419802c18d6, type: 3}
       propertyPath: m_Name
       value: scan_link
+      objectReference: {fileID: 0}
+    - target: {fileID: 5893536219641855179, guid: 823e40ea1241b59eba588419802c18d6, type: 3}
+      propertyPath: publishMessageFrequency
+      value: 0.016666668
       objectReference: {fileID: 0}
     - target: {fileID: 9166341009940207816, guid: 823e40ea1241b59eba588419802c18d6, type: 3}
       propertyPath: m_Name
@@ -168,7 +196,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4856974163060923653, guid: 823e40ea1241b59eba588419802c18d6, type: 3}
   m_PrefabInstance: {fileID: 432172682277126031}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5236893537321236449
+--- !u!114 &2096780927856111882
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,13 +216,13 @@ MonoBehaviour:
   _minAzimuthAngle: 0
   _maxAzimuthAngle: 360
   _minRange: 0.1
-  _maxRange: 20
+  _maxRange: 100
   _maxIntensity: 255
   _scanRate: 20
   _randomSeed: 1
   _offsetNoise: 0
   _gaussianNoiseSigma: 0.01
---- !u!114 &7739448469503922292
+--- !u!114 &4738838807510939039
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -218,6 +246,10 @@ PrefabInstance:
     - target: {fileID: 86272663018452060, guid: bbeef95d84bfd70d8a85da18523fbdab, type: 3}
       propertyPath: transforms.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 86272663018452060, guid: bbeef95d84bfd70d8a85da18523fbdab, type: 3}
+      propertyPath: publishMessageFrequency
+      value: 0.016666668
       objectReference: {fileID: 0}
     - target: {fileID: 86272663018452060, guid: bbeef95d84bfd70d8a85da18523fbdab, type: 3}
       propertyPath: transforms.Array.data[0]
