@@ -9,3 +9,23 @@ This unity project uses several non-default packages:
 3. AI Navigation version 1.1.1
 4. Mathematics version 1.2.6
 5. Newtonsoft Json version 3.0.2
+
+
+## Simulator keyboard controls 
+`shift+O` : open door
+
+`shift+D` : move to door
+
+`shift+B` : move to bedroom
+
+`shift+C` : move to couch
+
+`shift+K` : toggle move to kitchen position 1/2
+
+`shift+P` : take medicine
+
+`WASD` : nagivate camera
+
+`right-click and drag` : pan camera
+
+`mouse wheel` : zoom in
